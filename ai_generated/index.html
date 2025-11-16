@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soldier & Equipment Registration</title>
+    <style>
+      :root {
+        --green-bg: rgba(34, 197, 94, 0.2);
+        --blue-bg: rgba(52, 113, 211, 0.2);
+        --gray-bg: rgba(107, 114, 128, 0.2);
+        --dark-bg: #08080c;
+        --card-bg: #2a3444;
+        --text-light: #e2e8f0;
+        --label: #94a3b8;
+        --radius: 12px;
+        font-family: "Inter", system-ui;
+      }
+
+      body {
+        background-color: #008000;
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        color: var(--text-light);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: var(--radius);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      fieldset {
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid rgba(153, 48, 48, 0.1);
+      }
+      fieldset.green {
+        background: var(--green-bg);
+        border-color: #22c55e;
+      }
+      fieldset.blue {
+        background: var(--blue-bg);
+        border-color: #3b82f6;
+      }
+      fieldset.gray {
+        background: var(--gray-bg);
+        border-color: #6b7280;
+      }
+
+      legend {
+        padding: 6px 14px;
+        border-radius: 8px;
+        background: var(--dark-bg);
+        color: var(--text-light);
+        font-size: 15px;
+      }
+
+      label {
+        display: block;
+        font-size: 13px;
+        color: var(--label);
+        margin-bottom: 5px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        background: var(--dark-bg);
+        border: 1px solid #334155;
+        color: var(--text-light);
+        margin-bottom: 12px;
+      }
+      textarea {
+        min-height: 80px;
+        resize: vertical;
+      }
+      .row {
+        display: flex;
+        gap: 14px;
+      }
+      .col {
+        flex: 1;
+      }
+      button {
+        padding: 12px 18px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .btn {
+        background: linear-gradient(90deg, var(--blue-bg), var(--green-bg));
+        color: #05131b;
+      }
+      .btn-reset {
+        background: #475569;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Soldier & Equipment Registration Form</h2>
+      <form>
+        <!-- Soldier Info -->
+        <fieldset class="green">
+          <legend>Soldier Information</legend>
+          <div class="row">
+            <div class="col">
+              <label>Full Name</label
+              ><input type="text" placeholder="e.g. Abdullahi Mohamed" />
+            </div>
+            <div class="col">
+              <label>Rank</label
+              ><input type="text" placeholder="e.g. Captain" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>Service Number</label
+              ><input type="text" placeholder="e.g. SVC-2025-0023" />
+            </div>
+            <div class="col">
+              <label>Unit / Platoon</label
+              ><input type="text" placeholder="e.g. 3rd Battalion" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>Date of Birth</label><input type="date" />
+            </div>
+            <div class="col">
+              <label>Gender</label
+              ><select>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>Skill Level</label
+              ><select>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Contact Info -->
+        <fieldset class="blue">
+          <legend>Contact Information</legend>
+          <label>Address / Base</label
+          ><input type="text" placeholder="e.g. Camp Eagle, Sector 7" />
+          <div class="row">
+            <div class="col">
+              <label>Phone Number</label
+              ><input type="text" placeholder="e.g. +252 61 234 5678" />
+            </div>
+            <div class="col">
+              <label>Email</label
+              ><input type="email" placeholder="e.g. soldier@army.gov" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Service Details -->
+        <fieldset class="gray">
+          <legend>Service Details</legend>
+          <div class="row">
+            <div class="col">
+              <label>Enlistment Date</label><input type="date" />
+            </div>
+            <div class="col">
+              <label>Current Status</label
+              ><select>
+                <option>Active Duty</option>
+                <option>Reserve</option>
+                <option>Retired</option>
+                <option>Medical Leave</option>
+              </select>
+            </div>
+          </div>
+          <label>General Notes / Medical Remarks</label
+          ><textarea
+            placeholder="e.g. Fit for duty, no known allergies."
+          ></textarea>
+        </fieldset>
+
+        <!-- Equipment -->
+        <fieldset class="blue">
+          <legend>Issued Equipment</legend>
+          <div class="row">
+            <div class="col">
+              <label>Equipment Name</label
+              ><input type="text" placeholder="e.g. AK-47 Rifle" />
+            </div>
+            <div class="col">
+              <label>Serial Number</label
+              ><input type="text" placeholder="e.g. SN-09823432" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>Condition</label
+              ><select>
+                <option>New</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>Poor</option>
+              </select>
+            </div>
+            <div class="col">
+              <label>Quantity</label><input type="number" min="1" value="1" />
+            </div>
+          </div>
+          <label>Additional Equipment Notes</label
+          ><textarea
+            placeholder="e.g. All equipment inspected and working."
+          ></textarea>
+        </fieldset>
+
+        <div style="display: flex; gap: 12px; justify-content: flex-end">
+          <button class="btn-reset" type="reset">Reset</button
+          ><button class="btn" type="submit">Save Soldier Record</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
