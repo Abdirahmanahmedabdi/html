@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semantic HTML — Example Site</title>
+  <style>
+    :root{ --bg:#f7fbff; --card:#ffffff; --accent:#2b6cb0; --muted:#6b7280 }
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; background:var(--bg); color:#0f1724; line-height:1.5}
+    .wrap{max-width:1000px; margin:2rem auto; padding:1rem}
+    header, footer{background:linear-gradient(90deg,#eef6ff, #f8fafc); border-radius:10px; padding:1rem}
+    header .brand{display:flex; gap:1rem; align-items:center}
+    header h1{margin:0; font-size:1.25rem}
+    nav ul{list-style:none; padding:0; margin:0; display:flex; gap:.75rem}
+    nav a{display:inline-block; padding:.4rem .6rem; text-decoration:none; color:var(--accent); border-radius:6px}
+    .hero{display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center}
+    main{display:grid; grid-template-columns: 2fr 1fr; gap:1rem; margin-top:1rem}
+    article, aside, section{background:var(--card); padding:1rem; border-radius:8px; box-shadow:0 1px 2px rgba(2,6,23,.04)}
+    article h2{margin-top:0}
+    figure{margin:0}
+    img{max-width:100%; border-radius:6px}
+    footer{margin-top:1rem; text-align:center}
+    .meta{font-size:.9rem; color:var(--muted)}
+    .small{font-size:.9rem; color:var(--muted)}
+    details{margin-top:.5rem}
+    form label{display:block; margin-bottom:.25rem; font-weight:600}
+    form input, form textarea, form select{width:100%; padding:.5rem; margin-bottom:.75rem; border:1px solid #e6edf3; border-radius:6px}
+    .tags{display:flex; gap:.5rem; flex-wrap:wrap}
+    .tag{background:#eef2ff; padding:.25rem .5rem; border-radius:999px; font-size:.85rem}
+    @media (max-width:800px){ main{grid-template-columns:1fr} .hero{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header role="banner">
+      <div class="brand">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2b6cb0"/></svg>
+        <div>
+          <h1>Semantic HTML — Example Site</h1>
+          <p class="meta">A tiny page that demonstrates most HTML5 semantic elements</p>
+        </div>
+      </div>
+      <nav role="navigation" aria-label="Main navigation" style="margin-top:.75rem">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div>
+        <h2 id="hero-heading">Welcome — semantic building blocks</h2>
+        <p class="small">This page intentionally uses semantic HTML elements so you can see how they fit together in a simple site layout.</p>
+        <p><mark>Try selecting text</mark> to see the highlight element in action. The <time datetime="2025-11-25">current example date</time> shows the &lt;time&gt; element.</p>
+        <div class="tags" aria-hidden="true">
+          <span class="tag">&lt;header&gt;</span>
+          <span class="tag">&lt;nav&gt;</span>
+          <span class="tag">&lt;main&gt;</span>
+          <span class="tag">&lt;article&gt;</span>
+          <span class="tag">&lt;aside&gt;</span>
+        </div>
+      </div>
+      <figure>
+        <img src="https://via.placeholder.com/320x180.png?text=Semantic+HTML" alt="Placeholder: semantic HTML screenshot">
+        <figcaption class="small">Figure: simple visual placeholder</figcaption>
+      </figure>
+    </section>
+
+    <main id="content" role="main">
+      <article aria-labelledby="article-1">
+        <header>
+          <h2 id="article-1">Article: Why semantics matter</h2>
+          <p class="small">By <strong>Author Name</strong> — <time datetime="2025-11-25">Nov 25, 2025</time></p>
+        </header>
+        <p>Semantic elements give structure and meaning to a document. Screen readers, search engines, and other tools use them to understand content. Below is an example of a quoted passage using &lt;blockquote&gt; and a citation.</p>
+        <blockquote>
+          <p>"Good markup is the foundation of accessible web content." <cite>— Web Accessibility Guild</cite></p>
+        </blockquote>
+
+        <section aria-labelledby="sec-features">
+          <h3 id="sec-features">Features</h3>
+          <ul>
+            <li>Clear landmarks: &lt;header&gt;, &lt;main&gt;, &lt;footer&gt;</li>
+            <li>Document sections: &lt;section&gt;, &lt;article&gt;</li>
+            <li>Complementary content: &lt;aside&gt;</li>
+            <li>Media: &lt;figure&gt; &amp; &lt;figcaption&gt;</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="sec-form">
+          <h3 id="sec-form">Contact form (semantic form fields)</h3>
+          <form id="contact" action="#" method="post">
+            <fieldset>
+              <legend>Send a quick message</legend>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required>
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="name@example.com" required>
+
+              <label for="reason">Reason</label>
+              <select id="reason" name="reason">
+                <option>General</option>
+                <option>Question</option>
+                <option>Feedback</option>
+              </select>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Write a short message"></textarea>
+
+              <button type="submit">Send</button>
+            </fieldset>
+          </form>
+        </section>
+
+      </article>
+
+      <aside aria-labelledby="aside-1">
+        <h3 id="aside-1">Sidebar / Complementary info</h3>
+        <p class="small">The &lt;aside&gt; element contains content related to the main article but separable from the main flow.</p>
+
+        <section>
+          <h4>Mini profile</h4>
+          <address>
+            <strong>Example Org</strong><br>
+            123 Example Road<br>
+            City, Country<br>
+            <a href="mailto:hello@example.com">hello@example.com</a>
+          </address>
+        </section>
+
+        <section>
+          <h4>Extras</h4>
+          <details>
+            <summary>Useful tip</summary>
+            <p class="small">Use semantic tags to improve SEO and accessibility.</p>
+          </details>
+        </section>
+      </aside>
+    </main>
+
+    <footer role="contentinfo">
+      <p class="small">© <time datetime="2025">2025</time> — Example Site. Built with semantic HTML.</p>
+      <p class="small">Credits: <a href="#">Design example</a> • <a href="#">Documentation</a></p>
+    </footer>
+  </div>
+</body>
+</html>

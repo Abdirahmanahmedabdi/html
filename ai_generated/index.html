@@ -72,6 +72,7 @@
         color: var(--label);
         margin-bottom: 5px;
       }
+
       input,
       select,
       textarea {
@@ -114,49 +115,58 @@
   <body>
     <div class="container">
       <h2>Soldier & Equipment Registration Form</h2>
+
       <form>
         <!-- Soldier Info -->
         <fieldset class="green">
           <legend>Soldier Information</legend>
+
           <div class="row">
             <div class="col">
-              <label>Full Name</label
-              ><input type="text" placeholder="e.g. Abdullahi Mohamed" />
+              <label>Full Name</label>
+              <input type="text" value="Abdirahman Ahmed Abdi" />
             </div>
+
             <div class="col">
-              <label>Rank</label
-              ><input type="text" placeholder="e.g. Captain" />
+              <label>Rank</label>
+              <input type="text" value="Captain" />
             </div>
           </div>
+
           <div class="row">
             <div class="col">
-              <label>Service Number</label
-              ><input type="text" placeholder="e.g. SVC-2025-0023" />
+              <label>Service Number</label>
+              <input type="text" value="SVC-2025-0023" />
             </div>
+
             <div class="col">
-              <label>Unit / Platoon</label
-              ><input type="text" placeholder="e.g. 3rd Battalion" />
+              <label>Unit / Platoon</label>
+              <input type="text" value="3rd Battalion" />
             </div>
           </div>
+
           <div class="row">
             <div class="col">
-              <label>Date of Birth</label><input type="date" />
+              <label>Date of Birth</label>
+              <input type="date" value="1998-06-21" />
             </div>
+
             <div class="col">
-              <label>Gender</label
-              ><select>
-                <option>Male</option>
+              <label>Gender</label>
+              <select>
+                <option selected>Male</option>
                 <option>Female</option>
                 <option>Other</option>
               </select>
             </div>
           </div>
+
           <div class="row">
             <div class="col">
-              <label>Skill Level</label
-              ><select>
+              <label>Skill Level</label>
+              <select>
                 <option>Beginner</option>
-                <option>Intermediate</option>
+                <option selected>Intermediate</option>
                 <option>Advanced</option>
               </select>
             </div>
@@ -166,16 +176,19 @@
         <!-- Contact Info -->
         <fieldset class="blue">
           <legend>Contact Information</legend>
-          <label>Address / Base</label
-          ><input type="text" placeholder="e.g. Camp Eagle, Sector 7" />
+
+          <label>Address / Base</label>
+          <input type="text" value="Camp Eagle, Sector 7" />
+
           <div class="row">
             <div class="col">
-              <label>Phone Number</label
-              ><input type="text" placeholder="e.g. +252 61 234 5678" />
+              <label>Phone Number</label>
+              <input type="text" value="+252 61 234 5678" />
             </div>
+
             <div class="col">
-              <label>Email</label
-              ><input type="email" placeholder="e.g. soldier@army.gov" />
+              <label>Email</label>
+              <input type="email" value="soldier@army.gov" />
             </div>
           </div>
         </fieldset>
@@ -183,62 +196,68 @@
         <!-- Service Details -->
         <fieldset class="gray">
           <legend>Service Details</legend>
+
           <div class="row">
             <div class="col">
-              <label>Enlistment Date</label><input type="date" />
+              <label>Enlistment Date</label>
+              <input type="date" value="2021-03-10" />
             </div>
+
             <div class="col">
-              <label>Current Status</label
-              ><select>
-                <option>Active Duty</option>
+              <label>Current Status</label>
+              <select>
+                <option selected>Active Duty</option>
                 <option>Reserve</option>
                 <option>Retired</option>
                 <option>Medical Leave</option>
               </select>
             </div>
           </div>
-          <label>General Notes / Medical Remarks</label
-          ><textarea
-            placeholder="e.g. Fit for duty, no known allergies."
-          ></textarea>
+
+          <label>General Notes / Medical Remarks</label>
+          <textarea>Fit for duty, no known allergies.</textarea>
         </fieldset>
 
         <!-- Equipment -->
         <fieldset class="blue">
           <legend>Issued Equipment</legend>
+
           <div class="row">
             <div class="col">
-              <label>Equipment Name</label
-              ><input type="text" placeholder="e.g. AK-47 Rifle" />
+              <label>Equipment Name</label>
+              <input type="text" value="AK-47 Rifle" />
             </div>
+
             <div class="col">
-              <label>Serial Number</label
-              ><input type="text" placeholder="e.g. SN-09823432" />
+              <label>Serial Number</label>
+              <input type="text" value="SN-09823432" />
             </div>
           </div>
+
           <div class="row">
             <div class="col">
-              <label>Condition</label
-              ><select>
+              <label>Condition</label>
+              <select>
                 <option>New</option>
-                <option>Good</option>
+                <option selected>Good</option>
                 <option>Fair</option>
                 <option>Poor</option>
               </select>
             </div>
+
             <div class="col">
-              <label>Quantity</label><input type="number" min="1" value="1" />
+              <label>Quantity</label>
+              <input type="number" min="1" value="1" />
             </div>
           </div>
-          <label>Additional Equipment Notes</label
-          ><textarea
-            placeholder="e.g. All equipment inspected and working."
-          ></textarea>
+
+          <label>Additional Equipment Notes</label>
+          <textarea>All equipment inspected and working.</textarea>
         </fieldset>
 
         <div style="display: flex; gap: 12px; justify-content: flex-end">
-          <button class="btn-reset" type="reset">Reset</button
-          ><button class="btn" type="submit">Save Soldier Record</button>
+          <button class="btn-reset" type="reset">Reset</button>
+          <button class="btn" type="submit">Save Soldier Record</button>
         </div>
       </form>
     </div>

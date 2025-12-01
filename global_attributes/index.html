@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Global Attributes Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; line-height: 1.5; padding: 2rem; background: #f7fafc; color: #0f1724 }
+    .card { background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 6px 20px rgba(2,6,23,0.06); margin-bottom: 1rem }
+    header, nav, main, section { margin-bottom: 1rem }
+    .muted { color: #6b7280; font-size: .9rem }
+    pre { background:#0b1220; color:#cbd5e1; padding:1rem; border-radius:6px; overflow:auto }
+    .grid { display:grid; gap:1rem; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)) }
+  </style>
+</head>
+<body>
+  <header class="card" id="top" title="This is the page header" lang="en" dir="ltr" data-section="top-header" tabindex="0">
+    <h1 class="large" accesskey="h">HTML Global Attributes — Live Demo</h1>
+    <p class="muted" contenteditable="true" spellcheck="true">This paragraph is editable (contenteditable) and spellchecked. Try to edit me!</p>
+  </header>
+
+  <nav class="card" role="navigation" aria-label="Main navigation" data-nav="primary" hidden="false">
+    <ul class="grid" id="nav-list">
+      <li class="nav-item" data-index="1"><a href="#forms" title="Jump to forms" accesskey="f">Forms</a></li>
+      <li class="nav-item" data-index="2"><a href="#media" title="Jump to media" accesskey="m">Media</a></li>
+      <li class="nav-item" data-index="3"><a href="#table" title="Jump to tables" accesskey="t">Tables</a></li>
+    </ul>
+  </nav>
+
+  <main id="main" class="card" role="main" tabindex="0" data-main="true">
+
+    <section id="forms" class="card" aria-labelledby="forms-heading" data-demo="forms">
+      <h2 id="forms-heading">Form elements with global attributes</h2>
+
+      <!-- form element supports all global attributes -->
+      <form id="sample-form" class="sample" action="#" method="post" data-example="form" title="Sample form" lang="en" dir="ltr" spellcheck="false">
+        <fieldset id="fs-personal" class="fieldset" data-group="personal" tabindex="-1">
+          <legend id="legend-personal" title="Personal info">Personal information</legend>
+
+          <label for="name" data-label-for="name">Name (contenteditable on parent label):
+            <input id="name" name="name" type="text" placeholder="Jane Doe" aria-label="Full name" accesskey="n" required />
+          </label>
+
+          <label for="bio">Bio (spellcheck on):
+            <textarea id="bio" name="bio" rows="3" placeholder="Tell us about yourself" spellcheck="true" aria-describedby="bio-help"></textarea>
+          </label>
+          <small id="bio-help" class="muted">This textarea has <code>spellcheck</code> enabled.</small>
+
+          <div>
+            <label for="role">Role:
+              <select id="role" name="role" aria-required="true" data-role="user">
+                <option value="student">Student</option>
+                <option value="dev" selected>Developer</option>
+                <option value="admin">Admin</option>
+              </select>
+            </label>
+          </div>
+
+          <button type="submit" id="submit-btn" title="Submit the sample form" accesskey="s">Submit</button>
+          <button type="button" id="btn-hide" data-action="toggle" aria-pressed="false">Toggle Hidden Section</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="media" class="card" aria-labelledby="media-heading" data-demo="media" tabindex="0">
+      <h2 id="media-heading">Media & interactive elements</h2>
+
+      <!-- images, video, audio can carry global attributes too -->
+      <figure id="fig-photo" class="media" data-caption="example-photo" draggable="true" title="Drag me">
+        <img src="https://via.placeholder.com/320x180" alt="Placeholder image" id="img-placeholder" class="responsive" aria-describedby="img-desc" />
+        <figcaption id="img-desc">This image and figure have global attributes like <code>draggable</code> and <code>title</code>.</figcaption>
+      </figure>
+
+      <div>
+        <video id="sample-video" controls tabindex="0" data-media="video" title="Sample clip">
+          <source src="#" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+      </div>
+
+      <div>
+        <audio id="sample-audio" controls preload="metadata" data-media="audio" aria-label="Sample audio"></audio>
+      </div>
+
+      <canvas id="demo-canvas" width="320" height="120" role="img" aria-label="Decorative canvas" data-canvas="true"></canvas>
+
+    </section>
+
+    <section id="table" class="card" aria-labelledby="table-heading" data-demo="tables">
+      <h2 id="table-heading">Tables & structural elements</h2>
+
+      <table id="data-table" summary="Example table showing global attributes" tabindex="0" data-table="example">
+        <caption id="cap">Users & roles</caption>
+        <thead>
+          <tr id="row-head">
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="1">
+            <td>1</td>
+            <td>Jane</td>
+            <td>Developer</td>
+          </tr>
+          <tr data-id="2" hidden>
+            <td>2</td>
+            <td>Hidden User</td>
+            <td>Admin</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section id="semantic" class="card" aria-labelledby="semantic-heading">
+      <h2 id="semantic-heading">Semantic elements with global attributes</h2>
+      <article id="article-1" class="post" data-article="1" lang="en" dir="ltr" title="Article example">
+        <h3>Article title</h3>
+        <p class="muted">An <code>article</code> element with <code>data-*</code>, <code>id</code>, <code>lang</code> and other global attributes.</p>
+      </article>
+
+      <aside id="aside-1" aria-label="Related" data-related="true" tabindex="-1">Related links and notes (the aside has <code>tabindex</code> -1 so it can be focused programmatically).</aside>
+
+      <footer id="page-footer" role="contentinfo" title="Footer info" data-footer="main">Footer area — has <code>id</code>, <code>role</code>, and a <code>data-*</code> attribute.</footer>
+    </section>
+
+  </main>
+
+  <script>
+    // tiny script to demonstrate reading global attributes and toggling hidden
+    document.getElementById('btn-hide').addEventListener('click', function () {
+      const hiddenRow = document.querySelector('#data-table tbody tr[data-id="2"]');
+      if (hiddenRow.hasAttribute('hidden')) {
+        hiddenRow.removeAttribute('hidden');
+        this.setAttribute('aria-pressed','true');
+      } else {
+        hiddenRow.setAttribute('hidden','');
+        this.setAttribute('aria-pressed','false');
+      }
+    });
+
+    // show how dataset exposes data-* attributes
+    console.log('Header data-section:', document.querySelector('header').dataset.section);
+    console.log('Form dataset:', document.getElementById('sample-form').dataset.example);
+
+    // draw something on the canvas so it isn't empty
+    const c = document.getElementById('demo-canvas');
+    if (c && c.getContext) {
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#e6f0ff';
+      ctx.fillRect(0,0,c.width,c.height);
+      ctx.fillStyle = '#0f1724';
+      ctx.font = '16px sans-serif';
+      ctx.fillText('Canvas: global attributes demo', 10, 60);
+    }
+  </script>
+
+  <!-- Helpful notes for the reader (non-rendered) -->
+  <!--
+    This demo shows many of the HTML5 global attributes applied to different elements:
+      - id, class, style, title
+      - data-* (custom data attributes)
+      - lang, dir
+      - hidden
+      - tabindex
+      - accesskey
+      - draggable
+      - spellcheck
+      - contenteditable
+      - role, aria-*
+      - translate
+    Most global attributes can be used on any HTML element, though the effect may vary.
+  -->
+</body>
+</html>
